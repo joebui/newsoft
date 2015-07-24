@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    CREATED
+                </th>
+                <th>
+                    GROUP
+                </th>
+                <th>
+                    TITLE
+                </th>
+                <th>
+                    EDIT
+                </th>
+                <th>
+                    DELETE
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in news %}
+                <tr>
+                    <td>
+                        {{ i.date_created }}
+                    </td>
+                    {% for c in cate %}
+                        {% if c.key == i.category %}
+                            <td>
+                                {{ c.name.replace('_', ' ') }}
+                            </td>
+                        {% endif %}
+                    {% endfor %}
+                    <td>
+                        {{ i.title }}
+                    </td>
+                    <td>
+                        <a href="/edit?id={{i.key.id()}}"> EDIT </a>
+                    </td>
+                    <td>
+                        <a id="delete" href="#" value="DELETE" onclick="deleteName('{{ i.key.id() }}')"> DELETE </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function deleteName(id) {
+            $.ajax({
+                url: '/index/'+id,
+                type: 'DELETE',
+                dataType: 'text',
+                success: function(html) {
+                    if(html=='ok')
+                        $('#'+id).remove();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+{% endautoescape %}

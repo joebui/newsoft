@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> New News</title>
+
+        <!-- Bootstrap -->
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Script for CKEDITOR -->
+        <script src="/ckeditor/ckeditor.js"></script>
+    </head>
+    <body>
+        <form class="form-horizontal" action="/edit/{{ required_news.key.id() }}" method="post">
+            <input type="text" name="group" placeholder="Group" class="form-control" value="{{cate.name}}"><br>
+            <input type="text" name="title" placeholder="Title" class="form-control" value="{{required_news.title}}"><br>
+            <textarea name="editor1" id="editor1" class="form-control">{{required_news.content}}</textarea><br>
+            <input type="submit" name="submit" value="Submit" class="form-control">
+        </form>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script> CKEDITOR.replace( 'editor1' );  </script>
+    </body>
+</html>
+{% endautoescape %}
