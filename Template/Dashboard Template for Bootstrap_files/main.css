@@ -1,0 +1,46 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.navbar-inverse {
+    background-color: #2e872f;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: black;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: black;
+}
+
+.form-control {
+    border: 0px;
+    border-radius: 0px;
+}
+
+#article {
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 10px;
+}
+
+
+#first-row {
+    margin-top: 15px;
+}
+
+#search-box {
+    background-color: #f1f1f1;
+}
