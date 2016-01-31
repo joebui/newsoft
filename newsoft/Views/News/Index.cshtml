@@ -1,0 +1,58 @@
+﻿@model IEnumerable<newsoft.News>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            subcategory
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            short description
+        </th>
+        <th>
+            created date and time
+        </th>
+        <th>
+            updated date and time
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subcategory.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shortdesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.updated)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = item.id}) |
+            @Html.ActionLink("Details", "Details", new {id = item.id}) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.id})
+        </td>
+    </tr>
+}
+
+</table>
