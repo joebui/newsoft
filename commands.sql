@@ -22,3 +22,5 @@ drop table subcategory;
 drop table news;
 
 alter table News add created datetime not null, updated datetime not null;
+
+alter table News add viewed int default 0;

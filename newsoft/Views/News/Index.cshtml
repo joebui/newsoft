@@ -27,6 +27,9 @@
         <th>
             updated date and time
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.viewed)
+        </th>
         <th></th>
     </tr>
 
@@ -46,6 +49,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.updated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.viewed)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {id = item.id}) |

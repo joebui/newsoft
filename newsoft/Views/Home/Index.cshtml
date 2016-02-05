@@ -1,94 +1,33 @@
-﻿@{
+﻿@model IEnumerable<newsoft.News>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="col-md-9">
+    <h2>Latest news</h2>
     <!-- Stack the columns on mobile by making one full-width and the other half-width -->
-    <div class="row" id="first-row">
-        <div class="col-md-6">
-            <div id="article">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-                </p>
-            </div>
+    @foreach (var n in Model)
+    {
+        <div id="article">
+            <h2>@n.title</h2>
+            <p>@n.shortdesc</p>
+            <p>
+                <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+            </p>
         </div>
-        <div class="col-md-6">
-            <div id="article">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div id="article">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div id="article">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <hr>
-
-    <div id="article">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-        </p>
-    </div>
-
-    <div id="article">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-        </p>
-    </div>
-
-    <div id="article">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-        </p>
-    </div>
-
-    <div id="article">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-        </p>
-    </div>
+    }    
 </div>
-<div class="col-md-3">    
-        <h2>Most viewed</h2>
+<div class="col-md-3">
+    <h2>Most viewed</h2>
+    @foreach (var n in (List<News>)ViewBag.TopViewed)
+    {
         <div id="article">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+            <h2>@n.title</h2>
+            <p>@n.shortdesc</p>
+            <p>
+                <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
             </p>
         </div>
-        <div id="article">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-            </p>
-        </div>
-        <div id="article">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus,</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a>
-            </p>
-        </div>            
+    }    
 </div>

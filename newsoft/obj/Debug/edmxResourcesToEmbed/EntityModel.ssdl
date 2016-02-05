@@ -18,6 +18,7 @@
     <Property Name="content" Type="text" Nullable="false" />
     <Property Name="created" Type="datetime" Nullable="false" />
     <Property Name="updated" Type="datetime" Nullable="false" />
+    <Property Name="viewed" Type="int" />
   </EntityType>
   <EntityType Name="Subcategory">
     <Key>

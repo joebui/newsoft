@@ -51,8 +51,8 @@ namespace newsoft.Controllers
         public ActionResult Create([Bind(Include = "id,subcategoryID,title,shortdesc,content")] News news)
         {
             if (ModelState.IsValid)
-            {
-                // Get current date and time.
+            {                
+                news.viewed = 0;
                 news.created = DateTime.Now;
                 news.updated = DateTime.Now;
 

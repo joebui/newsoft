@@ -43,7 +43,27 @@
         <dd>
             @Html.DisplayFor(model => model.Subcategory.name)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.viewed)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.viewed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.updated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updated)
+        </dd>
     </dl>
 
     @using (Html.BeginForm()) {

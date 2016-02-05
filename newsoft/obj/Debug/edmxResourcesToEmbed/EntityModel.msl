@@ -12,6 +12,7 @@
     <EntitySetMapping Name="News">
       <EntityTypeMapping TypeName="NewsModel.News">
         <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="viewed" ColumnName="viewed" />
           <ScalarProperty Name="updated" ColumnName="updated" />
           <ScalarProperty Name="created" ColumnName="created" />
           <ScalarProperty Name="id" ColumnName="id" />

@@ -7,7 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace newsoft
@@ -19,11 +18,7 @@ namespace newsoft
     {
         public int id { get; set; }
         public int subcategoryID { get; set; }
-
-        [Required]
         public string title { get; set; }
-
-        [Required]
         public string shortdesc { get; set; }
 
         [AllowHtml]
@@ -31,6 +26,7 @@ namespace newsoft
 
         public System.DateTime created { get; set; }
         public System.DateTime updated { get; set; }
+        public Nullable<int> viewed { get; set; }
     
         public virtual Subcategory Subcategory { get; set; }
     }

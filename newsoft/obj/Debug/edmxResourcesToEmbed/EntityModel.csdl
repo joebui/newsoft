@@ -20,6 +20,7 @@
     <NavigationProperty Name="Subcategory" Relationship="Self.FK__News__subcategor__286302EC" FromRole="News" ToRole="Subcategory" />
     <Property Name="created" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="updated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="viewed" Type="Int32" />
   </EntityType>
   <EntityType Name="Subcategory">
     <Key>
